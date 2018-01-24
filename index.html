@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TypeScript Dashboard</title>
+    
+</head>
+<body>
+    <table id="employees-table">
+        <thead>
+            <tr>
+                <td>Employee</td>
+                <td>Hire</td>
+                <td>Salary</td>
+                <td>Delete</td>
+            </tr>
+        </thead>
+        <tbody class="tbodyE"></tbody>
+    </table>
+
+    <hr />
+
+    <table id="customers-table">
+        <thead>
+            <tr>
+                <td><input class="addName" value="" type="text" /></td>
+                <td><input class="addContract" value="" type="number" /> <button onClick="addCustomer()">Add</button></td>
+            </tr>
+            <tr>
+                <td>Customer</td>
+                <td>Contract</td>
+            </tr>
+        </thead>
+        <tbody class="tbodyC"></tbody>
+    </table>
+
+    <script src="app.js"></script>
+</body>
+</html>
