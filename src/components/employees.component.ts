@@ -1,10 +1,13 @@
-import { employeeArr } from '../sample-data/employee-array';
+import FakeData from '../data/index';
 
 // Accessing DOM Element
 const tbodyEmployees = document.querySelector('#tbodyEmployees');
 
+// Accessing fake employees array
+const employeeArr = FakeData.getEmployees();
+
 // Setting up Employees class
-export default class Employees {
+export default class EmployeesComponent {
   constructor() {
     // Listen for deleteEmployee button click
     tbodyEmployees.addEventListener('click', event => {

@@ -1,11 +1,14 @@
 import Customer from '../models/customer';
-import { customerArr } from '../sample-data/customers-array';
+import FakeData from '../data/index';
 
 // Accessing DOM Elements
 const newName: HTMLInputElement = document.querySelector('#addName');
 const newContract: HTMLInputElement = document.querySelector('#addContract');
 const tbodyCustomers = document.querySelector('#tbodyCustomers');
 const addCustomerBtn = document.querySelector('#addCustomerBtn');
+
+// Accessing fake customers array
+const customerArr = FakeData.getCustomers();
 
 // Creating HTML markup for Customers
 const renderMarkup = (): string => {
@@ -20,7 +23,7 @@ const renderMarkup = (): string => {
 }
 
 // Setting up Customers class
-export default class Customers {
+export default class CustomersComponent {
   constructor() {
     // Listen for addNewCustomer button click
     addCustomerBtn.addEventListener('click', this.addCustomer);

@@ -1,9 +1,9 @@
-import Employees from './components/employees.component';
-import Customers from './components/customers.component';
+import EmployeesComponent from './components/employees.component';
+import CustomersComponent from './components/customers.component';
 
 // Calling initial markup
-const employees = new Employees();
+const employees = new EmployeesComponent();
 employees.render();
 
-const customers = new Customers();
+const customers = new CustomersComponent();
 customers.render();
