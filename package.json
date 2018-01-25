@@ -2,7 +2,7 @@
   "name": "typescript-dashboard",
   "version": "1.0.0",
   "description": "TypeScript Dashboard",
-  "main": "app.js",
+  "main": "src/main.ts",
   "scripts": {
     "start": "lite-server"
   },
@@ -15,5 +15,8 @@
     "gulp-sass": "^3.1.0",
     "lite-server": "^2.3.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "systemjs": "^0.19.47",
+    "typescript": "^2.6.2"
+  }
 }
