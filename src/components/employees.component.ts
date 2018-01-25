@@ -38,6 +38,7 @@ export default class EmployeesComponent {
 
   // Deleting Employee function
   deleteEmployee(index): void {
+    //Last Employee cannot be deleted (requirement)
     if((this.employeeArr.length) !== 1) {
       this.employeeArr.splice(index, 1);
       this.render();
