@@ -1,0 +1,7 @@
+@for $i from 1 through 12 {
+  .flex-row > .flex-item-#{$i} {
+    flex: 0 0 #{(100 / 12) * $i + '%'};
+    -webkit-flex: 0 0 #{(100 / 12) * $i + '%'};
+    max-width: #{(100 / 12) * $i + '%'};
+  }
+}

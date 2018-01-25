@@ -1,42 +1,69 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TypeScript Dashboard</title>
-    
-</head>
-<body>
-    <table id="employees-table">
-        <thead>
-            <tr>
-                <td>Employee</td>
-                <td>Hire</td>
-                <td>Salary</td>
-                <td>Delete</td>
-            </tr>
-        </thead>
-        <tbody class="tbodyE"></tbody>
-    </table>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>TypeScript Dashboard</title>
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <main>
+            <!-- Employees Table -->
+            <div class="component">
+                <h2 class="title">Employees</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Employee</td>
+                            <td>Hire Date</td>
+                            <td>Salary</td>
+                            <td>Actions</td>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyEmployees"></tbody>
+                </table>
+            </div>
 
-    <hr />
-
-    <table id="customers-table">
-        <thead>
-            <tr>
-                <td><input class="addName" value="" type="text" /></td>
-                <td><input class="addContract" value="" type="number" /> <button onClick="addCustomer()">Add</button></td>
-            </tr>
-            <tr>
-                <td>Customer</td>
-                <td>Contract</td>
-            </tr>
-        </thead>
-        <tbody class="tbodyC"></tbody>
-    </table>
-
-    <script src="app.js"></script>
-</body>
+            <!-- Customers Table -->
+            <div class="component">
+                <h2 class="title">Customers</h2>
+                
+                <!-- Add new Customer row -->
+                <div class="flex-row justify-evenly align-center">
+                    <div class="flex-item-5">
+                        <div class="custom-input">
+                            <input id="addName" value="" type="text" required />
+                            <span class="bar"></span>
+                            <label class="text-field__label">Name</label>
+                            <small>e.g. John Smith</small>
+                        </div> 
+                    </div>
+                    <div class="flex-item-5">
+                        <div class="custom-input">
+                            <input id="addContract" value="" type="number" required />
+                            <span class="bar"></span>
+                            <label class="text-field__label">Contract</label>
+                            <small>e.g. 12345678</small>
+                        </div> 
+                    </div>
+                    <div class="flex-item-1">
+                        <button class="btn btn-flat" onclick="addCustomer()">Add</button>
+                    </div>
+                </div> 
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Customer</td>
+                            <td>Contract</td>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyCustomers"></tbody>
+                </table>
+            </div>       
+        </main>
+        <script src="main.js"></script>
+    </body>
 </html>
