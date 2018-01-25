@@ -2,7 +2,7 @@
   "name": "typescript-dashboard",
   "version": "1.0.0",
   "description": "TypeScript Dashboard",
-  "main": "src/main.ts",
+  "main": "src/ts/main.ts",
   "scripts": {
     "start": "lite-server"
   },
