@@ -1,8 +1,9 @@
 import Employee from '../models/employee' 
 import FakeData from '../data/index';
 
-// Accessing DOM Element
+// Accessing DOM Elements
 const tbodyEmployees = document.querySelector('#tbodyEmployees');
+const noEmployees = document.querySelector('#noEmployees');
 
 // Setting up Employees class
 export default class EmployeesComponent {
@@ -13,16 +14,16 @@ export default class EmployeesComponent {
   constructor() {
     this.employeeArr = FakeData.getEmployees();
 
-    // Listen for deleteEmployee button click
-    tbodyEmployees.addEventListener('click', event => {
-      if((<HTMLElement>event.target).nodeName === 'BUTTON') {
-        this.deleteEmployee(+(<HTMLElement>event.target).id);
-      }
-    });
+    this.setEventListener();
   }
 
   // Creating HTML markup for Employees
   render() :string {
+    if(!tbodyEmployees) {
+      noEmployees.innerHTML = 'Something went wrong';
+      return;
+    }
+
     return tbodyEmployees.innerHTML = `
       ${this.employeeArr.map((employee, index) => `
         <tr>
@@ -41,5 +42,19 @@ export default class EmployeesComponent {
       this.employeeArr.splice(index, 1);
       this.render();
     }
+  }
+
+  setEventListener() {
+    if(!tbodyEmployees) {
+      noEmployees.innerHTML = 'Something went wrong';
+      return;
+    }
+
+    // Listen for deleteEmployee button click
+    tbodyEmployees.addEventListener('click', event => {
+      if((<HTMLElement>event.target).nodeName === 'BUTTON') {
+        this.deleteEmployee(+(<HTMLElement>event.target).id);
+      }
+    });
   }
 }
