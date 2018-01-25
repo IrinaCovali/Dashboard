@@ -9,7 +9,7 @@
         <script src="node_modules/systemjs/dist/system.js"></script>
         <script src="node_modules/typescript/lib/typescript.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="dist/main.css">
     </head>
     <body>
         <main>
@@ -37,7 +37,7 @@
                 <div class="flex-row justify-evenly align-center">
                     <div class="flex-item-5">
                         <div class="custom-input">
-                            <input id="addName" value="" type="text" required />
+                            <input id="addName" type="text" required />
                             <span class="bar"></span>
                             <label class="text-field__label">Name</label>
                             <small>e.g. John Smith</small>
@@ -45,7 +45,7 @@
                     </div>
                     <div class="flex-item-5">
                         <div class="custom-input">
-                            <input id="addContract" value="" type="number" required />
+                            <input id="addContract" type="number" required />
                             <span class="bar"></span>
                             <label class="text-field__label">Contract</label>
                             <small>e.g. 12345678</small>
@@ -76,7 +76,7 @@
                 }
             });
             SystemJS
-                .import('src/ts/main')
+                .import('src/main')
                 .then(null, console.error.bind(console));
         </script>
     </body>
