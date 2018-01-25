@@ -1,14 +1,18 @@
+import Employee from '../models/employee' 
 import FakeData from '../data/index';
 
 // Accessing DOM Element
 const tbodyEmployees = document.querySelector('#tbodyEmployees');
 
-// Accessing fake employees array
-const employeeArr = FakeData.getEmployees();
-
 // Setting up Employees class
 export default class EmployeesComponent {
+  
+  // Accessing fake employees array
+  private employeeArr: Employee[];
+
   constructor() {
+    this.employeeArr = FakeData.getEmployees();
+
     // Listen for deleteEmployee button click
     tbodyEmployees.addEventListener('click', event => {
       if((<HTMLElement>event.target).nodeName === 'BUTTON') {
@@ -20,7 +24,7 @@ export default class EmployeesComponent {
   // Creating HTML markup for Employees
   render() :string {
     return tbodyEmployees.innerHTML = `
-      ${employeeArr.map((employee, index) => `
+      ${this.employeeArr.map((employee, index) => `
         <tr>
           <td>${employee.name}</td>
           <td>${employee.hireDate}</td>
@@ -33,8 +37,8 @@ export default class EmployeesComponent {
 
   // Deleting Employee function
   deleteEmployee(index): void {
-    if((employeeArr.length) !== 1) {
-      employeeArr.splice(index, 1);
+    if((this.employeeArr.length) !== 1) {
+      this.employeeArr.splice(index, 1);
       this.render();
     }
   }
