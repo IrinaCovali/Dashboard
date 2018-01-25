@@ -26,7 +26,7 @@ const deleteEmployee = (index): void => {
 
 // Listen for deleteEmployee button click
 tbodyEmployees.addEventListener('click', event => {
-  if((<HTMLButtonElement>event.target).nodeName === 'BUTTON') {
-    deleteEmployee(+(<HTMLButtonElement>event.target).id);
+  if((<HTMLElement>event.target).nodeName === 'BUTTON') {
+    deleteEmployee(+(<HTMLElement>event.target).id);
   }
 });
